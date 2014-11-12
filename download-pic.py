@@ -45,6 +45,3 @@ savePath = '/Users/eric/Documents/Programming/baidu-captcha/img'
 # 	gDownload(url4, savePath, i)
 # 	print "saved"+str(i)
 
-gDownload(url2, savePath, 2)
-gDownload(url3, savePath, 3)
-gDownload(url4, savePath, 4)
