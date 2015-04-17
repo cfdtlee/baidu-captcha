@@ -109,25 +109,25 @@ def findreg(img):
 			r = downbound[2]
 			if upbound[2] > downbound[2]:
 				r = upbound[2]
-			col_maxcount=[0 for x in range(0,r-l+1)]
+			col_maxcount=[0 for x in range(0, 100)]
 			# print l, r   ---ok
-			for x in range(l, r+1):
+			for x in range(1, 100):
 				count = 0
 				for y in range(0, 39):
 					if img.getpixel((x,y)) != img.getpixel((x-1, y)):
 						count += 1
 					else:
-						if count > col_maxcount[x-l]:
-							col_maxcount[x-l] = count
+						if count > col_maxcount[x]:
+							col_maxcount[x] = count
 							# row_maxbound = (begin, y, x-1, y,)
 						count = 0
 			col_maxcount_sort = deepcopy(col_maxcount)
 			col_maxcount_sort.sort(reverse = True)
-			i1 = col_maxcount.index(col_maxcount_sort[0])+l
+			i1 = col_maxcount.index(col_maxcount_sort[0])
 			print col_maxcount
 			col_maxcount.remove(col_maxcount_sort[0])
 			print col_maxcount
-			i2 = col_maxcount.index(col_maxcount_sort[1])+l
+			i2 = col_maxcount.index(col_maxcount_sort[1])
 			if i2 > i1:
 				i2 += 1
 			print i1, i2
@@ -160,7 +160,7 @@ if __name__ == '__main__':
 		img_r = revert(img, regpos)
 		img_r.save('./img1_after_pre/' + img_url, 'gif')
 	
-	# img = Image.open('./155.gif')
+	# img = Image.open('./11.gif')
 	# regpos = findreg(img)
 	# print regpos
 	# img_r = revert(img, regpos)
