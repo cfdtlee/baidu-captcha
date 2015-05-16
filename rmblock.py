@@ -152,13 +152,13 @@ def revert(img, regpos):
 
 if __name__ == '__main__':
 	pwd = sys.path[0]
-	img_urls = os.listdir(pwd + '/img1_binary')
+	img_urls = os.listdir(pwd + '/baidu/bimg/')
 	for img_url in img_urls:
 		print 'img_url:' + img_url
-		img = Image.open('./img1_binary/' + img_url)
+		img = Image.open('./baidu/bimg/' + img_url)
 		regpos = findreg(img)
 		img_r = revert(img, regpos)
-		img_r.save('./img1_after_pre/' + img_url, 'gif')
+		img_r.save('./baidu/img2_after_pre/' + img_url, 'png')
 	
 	# img = Image.open('./11.gif')
 	# regpos = findreg(img)

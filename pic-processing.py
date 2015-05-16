@@ -15,23 +15,25 @@ def getimg(dir):
 	imgdirs = os.listdir(dir)
 	imgdirs = imgdirs[1:]
 	for imgdir in imgdirs:
+		if imgdir[-3:] != 'png':
+			continue
 		imgs.append(Image.open(dir+'/'+imgdir))
 	return imgs
 
 def saveimg(imgs):
 	pwd = sys.path[0]
-	i = 1
+	i = 0
 	for img in imgs:
-		img.save(pwd+'/bimg/'+str(i)+'.gif')
+		img.save(pwd+'/baidu/img1_after_pre/'+str(i)+'.png')
 		i += 1
 
 if __name__ == '__main__':
 	pwd = sys.path[0]
 	imgs = []
-	imgs += getimg(pwd+'/img1')
-	imgs = imgs + getimg(pwd+'/img2')
-	imgs = imgs + getimg(pwd+'/img3')
-	imgs = imgs + getimg(pwd+'/img4')
+	imgs += getimg(pwd+'/baidu/1')
+	# imgs = imgs + getimg(pwd+'/img2')
+	# imgs = imgs + getimg(pwd+'/img3')
+	# imgs = imgs + getimg(pwd+'/img4')
 	bims = binary(imgs)
 	saveimg(bims)
 

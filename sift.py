@@ -2,8 +2,8 @@
 import cv2
 import scipy as sp
 
-img1 = cv2.imread('/Users/eric/Desktop/12345.png',0) # queryImage
-img2 = cv2.imread('/Users/eric/Desktop/1234.png',0) # trainImage
+img1 = cv2.imread('/Users/eric/Desktop/333_re_p.png',0) # queryImage
+img2 = cv2.imread('/Users/eric/Desktop/333_re.png',0) # trainImage
 
 # Initiate SIFT detector
 sift = cv2.SIFT()
@@ -11,6 +11,12 @@ sift = cv2.SIFT()
 # find the keypoints and descriptors with SIFT
 kp1, des1 = sift.detectAndCompute(img1,None)
 kp2, des2 = sift.detectAndCompute(img2,None)
+
+# dense=cv2.FeatureDetector_create("Dense")
+# kp1=dense.detect(img1)
+# kp2=dense.detect(img2)
+# kp1,des1=sift.compute(img1,kp1)
+# kp2,des2=sift.compute(img2,kp2)
 
 # FLANN parameters
 FLANN_INDEX_KDTREE = 0
