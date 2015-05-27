@@ -43,12 +43,12 @@ def split(img, splitPosition):
 	pass
 
 if __name__ == '__main__':
-	img = cv2.imread('13.png')
+	img = cv2.imread('29.png')
 	projectData = getProjectData(img)
 	print projectData
 	projection = drowProjection(projectData)
 	print getSplitPosition(projectData)
 	cv2.imshow('dd',projection)
-	cv2.imwrite('./projection13.png',projection)
+	cv2.imwrite('./projection29.png',projection)
 	cv2.waitKey()
 
